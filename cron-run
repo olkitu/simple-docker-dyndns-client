@@ -1,1 +1,1 @@
-${CRON} curl ${URL} > /dev/stdout
+${CRON} date && echo " " && curl -s --show-error ${URL} > /dev/stdout ; echo " "
