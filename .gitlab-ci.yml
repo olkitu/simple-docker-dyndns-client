@@ -26,4 +26,10 @@ build:
   - docker push $TAG_LATEST
   - docker push $TAG_COMMIT_LONG_SHA
   only:
-  - master
+    refs:
+      - master
+    changes:
+      - .gitlab-ci.yml
+      - cron-run
+      - docker-entrypoint.sh
+      - Dockerfile
