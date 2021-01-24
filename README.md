@@ -27,5 +27,22 @@ docker-compose logs -f
 ## Deploy to Docker Swarm
 
 ```
-
+version: "3.7"
+services:
+  dyndns_client:
+    image: registry.gitlab.com/olkitu/simple-docker-dyndns-client/master
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+        failure_action: rollback
+        monitor: 1m
+        order: start-first
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    environment:
+      URL: https://dyndns_endpoint
+      CRON: 0 1 * * *
 ```
