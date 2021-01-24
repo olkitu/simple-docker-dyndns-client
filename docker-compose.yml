@@ -1,5 +1,5 @@
 version: "3.7"
 services:
   dyndns_client:
-    build: .
+    image: olkitu/simple-docker-dyndns-client
     env_file: .env
