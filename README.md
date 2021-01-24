@@ -30,7 +30,7 @@ docker-compose logs -f
 version: "3.7"
 services:
   dyndns_client:
-    image: registry.gitlab.com/olkitu/simple-docker-dyndns-client/master
+    image: olkitu/simple-docker-dyndns-client
     deploy:
       replicas: 1
       update_config:
