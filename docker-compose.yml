@@ -1,0 +1,5 @@
+version: "3.7"
+services:
+  dyndns_client:
+    build: .
+    env_file: .env
